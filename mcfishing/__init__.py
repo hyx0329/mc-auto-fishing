@@ -35,6 +35,9 @@ def on_press_esc(key):
 
 def run():
     target_window_id = search_window()
+    if len(target_window_id) == 0:
+        print('No game window found! Exiting')
+        exit(1)
     activate_window(target_window_id)
     time.sleep(1)
     keyboard.press(kKey.esc)
